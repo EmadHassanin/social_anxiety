@@ -15,6 +15,7 @@ pacman::p_load(tidyverse     # tidy data
                , arrow       # apache arrow provides powerful package for sharing data
                , data.table  # exporting data as .txt
                , ggpubr      # add themes and visualization prop. to ggplot
+               , e1071
                )    
 
 #install.packages("arrow", repos = c("https://dl.bintray.com/ursalabs/arrow-r"))
