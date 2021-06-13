@@ -60,7 +60,7 @@ sa %>%
   left_join(conv %>% dplyr::select(V1,V7), by = c("eid" = "V7"))-> sa_final
 
 sa_final %>% 
-  dplyr::select(-eid) %>% 
-  dplyr::select(V1,everything())-> prova1
+  dplyr::select(-V1) %>% 
+  dplyr::select(eid,everything())-> prova1
 
 fwrite(prova1, "/home/ubuntu/Emad/output/ukbb/pheno/social_anxiety/sa_covariates" , sep = "\t")
