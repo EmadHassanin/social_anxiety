@@ -61,7 +61,10 @@ sa %>%
 
 sa_final %>% 
   dplyr::select(-V1) %>% 
-  dplyr::select(eid,everything())-> prova1
+  dplyr::select(eid,everything()) %>% 
+  inner_join(sample_fam_id  %>% dplyr::select(ID_1), by = c("eid"="ID_1")) -> prova1
 
 
 fwrite(prova1, "/home/ubuntu/Emad/output/ukbb/pheno/social_anxiety/sa_covariates" , sep = "\t")
+
+prova1 <- fread("/home/ubuntu/Emad/output/ukbb/pheno/social_anxiety/sa_covariates")

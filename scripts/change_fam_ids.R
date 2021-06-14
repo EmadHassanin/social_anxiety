@@ -12,8 +12,8 @@ fam_id %>%
   dplyr::select(V1,V2,everything()) %>% 
   as.data.frame() -> new_fam1
 
-new_fam1 %>% 
-  left_join(prova1 %>% dplyr::select(eid,pheno) , by =  c( "V1" = "eid")) -> e
+sample_fam_id  %>% 
+  left_join(prova1 %>% dplyr::select(eid,pheno) , by =  c( "ID_1" = "eid")) -> e
 
 names(new_fam1) <- NULL
 
